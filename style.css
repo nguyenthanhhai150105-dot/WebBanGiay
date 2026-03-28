@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.menu a {
+    margin: 0 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    height: 350px;
+}
+
+/* LEFT */
+.left {
+    width: 35%;
+    background: #1f3b44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left img {
+    width: 220px;
+}
+
+.label {
+    position: absolute;
+    bottom: 30px;
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    color: red;
+}
+
+/* RIGHT */
+.right-hero {
+    width: 65%;
+    background: #ff1a1a;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RUN */
+.right-hero h1 {
+    position: absolute;
+    font-size: 200px;
+    color: white;
+    opacity: 0.08;
+    font-weight: 900;
+    z-index: 1;
+}
+
+/* SHOE */
+.main-shoe {
+    width: 350px;
+    z-index: 2;
+}
+
+/* BUTTON */
+.btn-group {
+    position: absolute;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    background: white;
+    padding: 10px 20px;
+    border: none;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* PRODUCTS */
+.products {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px;
+    background: #eee;
+}
+
+/* LOGO NIKE BẰNG HÌNH ẢNH */
+.nike-bg {
+    position: absolute;
+    width: 400px;          /* chỉnh theo size ảnh */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.08;          /* mờ giống SVG trước */
+    pointer-events: none;    /* không ảnh hưởng click */
+    z-index: 1;
+}
+
+.nike-line path {
+    fill: none;
+    stroke: black;
+    stroke-width: 4;
+    stroke-dasharray: 30 20;
+    stroke-linecap: round;
+}
+
+/* CARD */
+.card {
+    background: #ddd;
+    padding: 15px;
+    text-align: center;
+    z-index: 2;
+}
+
+.card img {
+    width: 120px;
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(to right, #ff7b7b, red);
+    color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* RIGHT FOOTER */
+.footer-right {
+    position: relative;
+}
+
+.footer-right h2 {
+    font-size: 40px;
+    z-index: 2;
+    position: relative;
+}
+
+.footer-shoe {
+    width: 220px;
+    position: absolute;
+    right: -30px;
+    top: -40px;
+    background: white;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .menu {
+        display: none;
+    }
+}
